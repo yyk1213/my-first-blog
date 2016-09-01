@@ -6,19 +6,15 @@
         <body>
 
             <div>
-             <hi><a href="">YeonKyeong Blog</a></h1>
-            </div>
-
-            <div> 
-             <p>published: 16.08.31., 17:19</p>
-             <h2><a href="">My first post</a></h2>
-             <p>나는 천재다! 나는 지혜롭다!</p>
+             <h1><a href="">YeonKyeong's Blog</a></h1>
             </div>
             
-            <div>
-             <p>published: 16.08.31., 17:23</p>
-             <h2><a href="">My second post</a></h2>
-             <p>끝날 때까지 끝난게 아니다.</p>
+          {% for post in posts %} 
+            <div> 
+            <p>published: {{post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text| linebreaksbr }}</p>
             </div>
+          {% endfor %}  
         </body>
     </html>
